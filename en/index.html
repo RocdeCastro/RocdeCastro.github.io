@@ -530,11 +530,11 @@
           <h3>Prompt re-engineering for the agent-assist coach</h3>
           <span class="badge">11/12 agents in production · −39.8% time per interaction</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Long, loosely structured answers with low completeness that depended on how each agent read them.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>A new answer format (<strong>Prompt V2</strong>, with Cognitive Prompt Middleware): summary, key points, applicable criteria and next steps. Wave V2.2 under way, reducing fallbacks.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result"><strong>−21.0 s per interaction</strong> (51.4 s → 30.4 s) across the 9 agents with complete measurement and <strong>+26.28 pts of average completeness</strong>. 89.4% of the gain comes from agents reading less, not from the model answering faster.</dd>
           </dl>
           <div class="spacer"></div>
@@ -546,11 +546,11 @@
           <h3>Megaprompt that rewrites service scripts for retail contact centers</h3>
           <span class="badge">3× capacity · 7 → 171 technical sheets</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Slow, manual script production, with all the conversion and standardization work on subject-matter experts (SMEs).</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>A pipeline of <strong>two chained megaprompts</strong>: the first converts with full fidelity, the second curates with editorial criteria and flags open issues. Only the SME decides content.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result"><strong>244% acceleration</strong> and 171 sheets by Sep 2026. The biggest jumps came right after SMEs started using it (+56 in July, +47 in August).</dd>
           </dl>
           <div class="spacer"></div>
@@ -562,11 +562,11 @@
           <h3>Tone-of-voice agent for service tracking messages on WhatsApp</h3>
           <span class="badge">133 templates adapted · −17% length</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Long operational templates outside the channel's writing guide, with inconsistencies that were hard to find by reading.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>A content design agent (<strong>writer + audit, v9</strong>) that rewrites in the WhatsApp tone, counts characters and audits line by line, keeping every operational detail.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result"><strong>133 templates</strong> across accounts, insurance and mortgages; average of 322 → 263 characters <strong>with no information loss</strong>. In daily use by the tracking team.</dd>
           </dl>
           <div class="spacer"></div>
@@ -578,11 +578,11 @@
           <h3>Data-driven curation and audio review for the IVR</h3>
           <span class="badge">37,000 phrases in 1 run · 45% less listening</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Curation by scanning spreadsheets line by line, and human review of every audio file.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd><strong>Megaprompt V6</strong> that recognizes the type of base and returns mini-cases with a verdict and confidence, plus a <strong>review web app</strong> for audio and transcripts that runs entirely in the browser.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result"><strong>74% of 17 days of calls</strong> covered in one run and an <strong>estimated 45% saving</strong> in human review: audio above 85% similarity no longer needs listening.</dd>
           </dl>
           <div class="spacer"></div>
@@ -594,11 +594,11 @@
           <h3>Deterministic improvement cycle for the customer service transcript taxonomy</h3>
           <span class="badge">4,500 paired conversations · 100% contract adherence</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Classification prompt changes approved on reading impressions, with no comparable measurement between versions.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>A cycle across three environments: the <strong>agent</strong> proposes the challenger, a <strong>deterministic web app</strong> measures both versions on the same conversations, and the <strong>expert</strong> settles the disagreements.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result">The v3 × v4 round isolated <strong>1,538 decisive cases</strong> (34.2% disagreement) for curation. A quality gain is declared only after the answer key is checked, and the cycle caught a false win.</dd>
           </dl>
           <div class="spacer"></div>
@@ -608,17 +608,19 @@
         <article class="case reveal">
           <div class="case-kicker"><span class="idx">06 —</span> Customer experience</div>
           <h3>Turning operational answers into customer-ready messages in credit card journeys</h3>
-          <span class="badge">48 outputs audited · V2C.1 in production testing</span>
+          <span class="badge">In production · 4,131 conversations analyzed</span>
           <dl>
-            <dt>Antes</dt>
-            <dd>Agents had to translate internal jargon and decide on their own what could be said to the customer.</dd>
-            <dt>Entrega</dt>
-            <dd>A module that produces <strong>ready-to-say responses for chat and voice</strong> with six guardrails and the pillars of the bank's service guide.</dd>
-            <dt class="result">Resultado</dt>
-            <dd class="result"><strong>Empathy 12/12</strong>, voice output 100% speakable, and case confirmation from 0/5 to <strong>5/5</strong>. Both blocking findings were closed in V2C.1.</dd>
+            <dt>Before</dt>
+            <dd>Agents translated internal jargon on their own and decided what could be said to the customer.</dd>
+            <dt>Delivery</dt>
+            <dd>A module that produces <strong>ready-to-say responses for chat and voice</strong>, with six guardrails and the pillars of the bank's service guide.</dd>
+            <dt>Measurement</dt>
+            <dd><strong>3,304 blind judgments</strong> (118 calls × 28 criteria), joined with callbacks, transfers and CSAT.</dd>
+            <dt class="result">Diagnosis</dt>
+            <dd class="result">The bottleneck is <strong>closing</strong>: only <strong>20%</strong> of calls confirm the issue was resolved. When they do, <strong>no callbacks</strong> within 2 days (0 of 20), which sets the next version.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Copilot</span></div>
+          <div class="tags"><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Blind review</span></div>
         </article>
 
         <article class="case reveal">
@@ -626,11 +628,11 @@
           <h3>Data-driven curation for the agent-assist coach</h3>
           <span class="badge">170,000 interactions · 9 agents · per release</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Sample-based curation, with priorities set by perception. Dislikes showed the symptom, not where the failure was.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>A synthetic curator working next to the human one: a megaprompt and an agent with 2 skills (production and testing), with human approval before each run. In the latest release it produced 191 revised scripts, 9 new ones and 4 new instruction prompts for the agents.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result">Each failure now goes to the right layer. Findings the sample never showed: <strong>46.8% of cases were retrieval failures</strong>, not content. Knowledge bases flagged for retirement appeared in <strong>12% of answers</strong>.</dd>
           </dl>
           <div class="spacer"></div>
@@ -642,11 +644,11 @@
           <h3>AI enablement: from local experience to organizational capability</h3>
           <span class="badge">3 sessions · 6 reusable assets published</span>
           <dl>
-            <dt>Antes</dt>
+            <dt>Before</dt>
             <dd>Training people to write better prompts does not last: under pressure, everyone goes back to loose requests.</dd>
-            <dt>Entrega</dt>
+            <dt>Delivery</dt>
             <dd>Training built around the <strong>translation layer</strong> and a 5-level prompt taxonomy. Every session ends with an agent ready to use the next day.</dd>
-            <dt class="result">Resultado</dt>
+            <dt class="result">Result</dt>
             <dd class="result">Cohorts in three customer service and AI teams, with <strong>6 assets</strong> published for reuse (tutors, auditor, skill and guide).</dd>
           </dl>
           <div class="spacer"></div>

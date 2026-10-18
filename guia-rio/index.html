@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="O mapa do Rio que Roc de Castro escreveu para o Google em 2016: 47 lugares por zona, com endereço e Instagram.">
+<meta property="og:title" content="Guia Roc de Castro">
+<meta property="og:description" content="O mapa do Rio que eu escrevi para o Google em 2016, por zona, com endereço e Instagram de cada lugar.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#0b5d73">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Guia Roc de Castro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Alegreya:ital,wght@0,400;0,500;1,400&family=Poppins:wght@500;600&display=swap">
+<style>
+/* Layout: guia de bolso. Cabeçalho com faixa de calçadão, chips de zona fixos, cartões-pin em grade que vira uma coluna no celular. */
+:root{
+  --bg:#f3f6f7;
+  --surface:#ffffff;
+  --ink:#14232b;
+  --muted:#556670;
+  --line:#d5dfe3;
+  --pin:#d9341f;         /* o vermelho dos pins originais */
+  --sea:#0b5d73;         /* azul da Baía */
+  --sea-soft:#e1eef2;
+  --warn-bg:#fff1d6; --warn-fg:#7a4b00;
+  --gone-bg:#f6e0dc; --gone-fg:#8a2414;
+  --wave:#14232b;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-name:"Poppins", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Alegreya", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e171c; --surface:#16232a; --ink:#e8eff1; --muted:#9db0b8; --line:#29404a;
+  --pin:#ff6a50; --sea:#5cc3dc; --sea-soft:#183842;
+  --warn-bg:#3a2c0e; --warn-fg:#ffd27a; --gone-bg:#3d1c17; --gone-fg:#ffad9e;
+  --wave:#e8eff1; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e171c; --surface:#16232a; --ink:#e8eff1; --muted:#9db0b8; --line:#29404a;
+  --pin:#ff6a50; --sea:#5cc3dc; --sea-soft:#183842;
+  --warn-bg:#3a2c0e; --warn-fg:#ffd27a; --gone-bg:#3d1c17; --gone-fg:#ffad9e;
+  --wave:#e8eff1; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+header{padding-block:40px 20px}
+.eyebrow{font-family:var(--f-name);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);font-weight:600}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,6vw,4rem);line-height:1;margin:10px 0 14px;text-wrap:balance;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--pin)}
+.sub{font-family:var(--f-display);font-weight:500;font-size:clamp(1.15rem,2.6vw,1.5rem);margin:0 0 12px;color:var(--ink)}
+.lede{max-width:62ch;color:var(--muted);margin:0;font-size:1.06rem}
+.lede a{color:var(--sea)}
+.stats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-family:var(--f-name);font-size:13px;color:var(--muted)}
+.stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+.wave{height:22px;color:var(--wave);opacity:.9;margin-top:26px}
+.wave svg{display:block;width:100%;height:22px}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+.bar{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:10px}
+.chip{font-family:var(--f-name);font-size:13px;font-weight:500;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.chip span{color:var(--muted);font-variant-numeric:tabular-nums;margin-left:4px}
+.chip:hover,.chip:focus-visible{border-color:var(--sea);color:var(--sea);outline:none}
+.search{margin-left:auto;flex:1 1 200px;max-width:280px}
+.search input{width:100%;font:inherit;font-family:var(--f-name);font-size:14px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.search input:focus{outline:2px solid var(--sea);outline-offset:1px}
+
+main{padding-block:12px 40px}
+section.zone{padding-top:28px;scroll-margin-top:70px}
+.zone-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+.zone-head h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);margin:0;letter-spacing:-.01em}
+.zone-head p{margin:0;color:var(--muted);font-family:var(--f-name);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+
+.pin{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pin-top{display:flex;gap:10px;align-items:flex-start}
+.pin-top svg{flex:none;width:18px;height:22px;margin-top:4px;color:var(--pin)}
+.pin h3{font-family:var(--f-name);font-weight:600;font-size:1.12rem;line-height:1.25;margin:0;color:var(--pin);text-wrap:balance}
+.hood{font-family:var(--f-name);font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:2px}
+.txt{margin:0;font-size:1.02rem;line-height:1.55}
+.status{align-self:flex-start;font-family:var(--f-name);font-size:12px;font-weight:500;border-radius:4px;padding:3px 8px;background:var(--warn-bg);color:var(--warn-fg)}
+.status.gone{background:var(--gone-bg);color:var(--gone-fg)}
+.meta{margin-top:auto;border-top:1px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:6px;font-family:var(--f-name);font-size:13px}
+.addr{color:var(--ink);line-height:1.45}
+.addr small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px}
+.links a{color:var(--sea);text-decoration:none;font-weight:500}
+.links a:hover,.links a:focus-visible{text-decoration:underline;outline:none}
+.links .none{color:var(--muted)}
+.empty{color:var(--muted);font-family:var(--f-name);font-size:14px;padding:30px 0}
+
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--muted);font-family:var(--f-name);font-size:13px}
+footer p{margin:0 0 6px;max-width:80ch}
+footer a{color:var(--sea)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+</head>
+<body>
+<header class="wrap">
+  <div class="eyebrow">O Brasil Inteiro Joga · Google · Rio 2016</div>
+  <h1>Guia <em>Roc de Castro</em></h1>
+  <p class="sub">O mapa do Rio que eu escrevi para o Google</p>
+  <p class="lede">Os textos que escrevi para os pins do mapa do Rio no portal do Google durante os Jogos de 2016, agora organizados por zona, com endereço atual e Instagram de cada lugar. Estes são os pins que guardei no <a href="https://rocdecastro.wordpress.com/2016/10/14/o-brasil-inteiro-joga/" target="_blank" rel="noopener">post do portfólio</a>; o mapa original tinha uns 250.</p>
+  <div class="stats" id="stats"></div>
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 240 22" preserveAspectRatio="none"><defs><pattern id="calcadao" width="40" height="22" patternUnits="userSpaceOnUse"><path d="M0 11 C10 0 10 0 20 11 S30 22 40 11" fill="none" stroke="currentColor" stroke-width="5"/></pattern></defs><rect width="240" height="22" fill="url(#calcadao)"/></svg>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Zonas">
+  <div class="wrap" id="chips">
+    <label class="search" for="q"><input id="q" type="search" placeholder="Buscar lugar ou bairro" autocomplete="off"></label>
+  </div>
+</nav>
+
+<main class="wrap" id="main"></main>
+
+<footer class="wrap">
+  <p>Textos: Roc de Castro, para o portal O Brasil Inteiro Joga (Google Zoo Brasil, plataforma MediaMonks), 2016. Redação do projeto: Roc de Castro e Ana Letícia da Rosa.</p>
+  <p>Endereços e perfis conferidos no Google em outubro de 2026. Lugares mudam, fecham e trocam de nome: os avisos em amarelo e vermelho mostram o que mudou desde 2016. Confirme antes de ir.</p>
+</footer>
+
+<script>
+const ZONES = [
+  {id:"zona-sul", name:"Zona Sul", desc:"Leme, Copacabana, Ipanema, Leblon, Gávea, Jardim Botânico, Vidigal, Urca, Botafogo e Catete"},
+  {id:"centro", name:"Centro e Santa Teresa", desc:"Centro histórico, Lapa, Zona Portuária e Santa Teresa"},
+  {id:"zona-norte", name:"Zona Norte", desc:"Andaraí, Mangueira, São Cristóvão, Vila Isabel e Alto da Boa Vista"},
+  {id:"zona-oeste", name:"Barra e Zona Oeste", desc:"Barra da Tijuca, Recreio e Barra de Guaratiba"}
+];
+const HOOD_ORDER = ["Leme","Copacabana","Ipanema","Leblon","Gávea","Jardim Botânico","Vidigal","Urca","Botafogo","Catete",
+  "Centro","Lapa","Saúde","Santa Teresa",
+  "Andaraí","Mangueira","São Cristóvão","Vila Isabel","Alto da Boa Vista",
+  "Barra da Tijuca","Recreio dos Bandeirantes","Barra de Guaratiba"];
+
+// status: {t:"texto", k:"warn"|"gone"}
+const P = [
+ // ZONA SUL
+ {z:"zona-sul",h:"Leme",n:"Espetto Carioca",a:"Quiosque QL 15A, Av. Atlântica, s/n – Leme, Rio de Janeiro – RJ, 22010-020",ig:"espettocarioca",
+  t:"É pau, é pedra, é o fim do caminho. É fim de tarde no Leme, com um espetinho. Tem som ao vivo relax, de quarta a domingo. Tem linguiça, vegano, carne e camarão. Às vezes demora, mas vale a espera: javali, berinjela e até coração. Mar, calor, praia, ela. Adoce o humor com o churros-nutella."},
+ {z:"zona-sul",h:"Leme",n:"Bar do David",a:"Ladeira Ary Barroso, 66 – Chapéu Mangueira, Leme, Rio de Janeiro – RJ, 22010-060",ig:"bar_dodavid",
+  t:"Pode subir que o cocuruto desse morro tá tranquilo, tá pacificado. As estrelas do David são as costelinhas com geleias de abacaxi, hortelã e pimenta, além da abissal feijoada de frutos do mar. Pra acabar bem na quebrada, vale arriscar: as caipirinhas exóticas são de tirar o Chapéu da Mangueira."},
+ {z:"zona-sul",h:"Ipanema",n:"La Fiorentina",a:"Rua Aníbal de Mendonça, 112 – Ipanema, Rio de Janeiro – RJ",ig:"restaurantelafiorentina",
+  s:{t:"Saiu do Leme (Av. Atlântica, 458A) e hoje fica em Ipanema",k:"warn"},
+  t:"Famoso no Rio? Aqui tem pra tudo quanto é lado. E eles vêm até você. Dá até pra levar pra casa, é só pedir com jeitinho. É que os nomes dos pratos e toda a decoração desse restaurante Italiano são homenagem a artistas, escritores e personalidades. Vai de couvert Veríssimo ou lasanha Falabella, fera?"},
+ {z:"zona-sul",h:"Copacabana",n:"Copacabana",a:"Av. Atlântica, do Leme ao Posto 6 – Copacabana, Rio de Janeiro – RJ",ig:null,
+  t:"Sim, Copa é bacana. Seu passeio sobre curvas da calçada é mais que um programa, é um poema nas areias da faixa. Eternizada nas letras de Jobim e Braga, pra fazer jus à sua orla tão falada, respire o bairro dos velhinhos sarados e declame: Copacabana, princesinha do mar."},
+ {z:"zona-sul",h:"Copacabana",n:"Hell's Burguer",a:"Rua Miguel Lemos, 54 – Copacabana, Rio de Janeiro – RJ · também na Rua Teixeira de Melo, 21 – Ipanema",ig:"hellsburguer",
+  t:"Dois hambúrgueres, alface, queijo, molho especial... Vade-retro, fastfood! São 2 tipos de burguers artesanais com de 200g de pura capirotagem: o Fifty-Fifty (bacon e costela) e o Hell's Burguer (100% costela). Mergulhe suas canoas de fritas sem medo nas profundezas vermelhas do voodoo barbecue \\m/"},
+ {z:"zona-sul",h:"Ipanema",n:"Polis Sucos",a:"Rua Maria Quitéria, 70 – Ipanema, Rio de Janeiro – RJ, 22410-040",ig:"polissucos",
+  t:"Açaí, guaraná, zum zum zum na esquina é um ímã pra quem passa corrido na frente dessa casa de sucos tradicional. Rápido e saudável: pague, pegue e leve com você. Ou beberique em pé mesmo num dos apoios de rua. Não tem mesa com cadeira, mas tem uma tapioca de queijo branco que é uma beleza."},
+ {z:"zona-sul",h:"Ipanema",n:"Livraria da Travessa",a:"Rua Visconde de Pirajá, 572 – Ipanema, Rio de Janeiro – RJ, 22410-002",ig:"livrariadatravessa",
+  t:"Essa “da Travessa” aportou na Visconde de Pirajá pra acolher os amantes dos livros que buscam um ambiente aconchegante e mais intimista em Ipanema. Do lanche ao almoço, saboreie as obras sem pressa, leia o menu do café Bazzar Lado B como se estivesse em Champs Elysées, madame, monsieur..."},
+ {z:"zona-sul",h:"Ipanema",n:"Posto 8",a:"Av. Vieira Souto, na altura da Rua Farme de Amoedo – Ipanema, Rio de Janeiro – RJ",ig:null,
+  t:"As sungas multicoloridas e barraquinhas com a bandeira do arco-íris recepcionam a turma magia desse point LGBT na praia dos garotos de Ipanema. O Posto 8 é mais deles, mas recebe bem todo o tipo de amor, orientação e família. Até porque esse babado de segregação é coisa do passado."},
+ {z:"zona-sul",h:"Ipanema",n:"Canastra Bar",a:"Rua Jangadeiros, 42, loja G (Edifício Paranoá) – Ipanema, Rio de Janeiro – RJ, 22420-010",ig:"pizzacanastraipanema",
+  t:"Caponata de Amor, Burrata de Ipanema e Salomé Marinada desfilam de mãos dadas com vinhos gaúchos que, segundo reza o menu desse boteco à moda antiga, podem ser Infiéis, Machos ou Vintages. De quebra, foi eleito point de paquera. Na moral, pessoal? Larga o APP e vai dar match na calçada do Canastra."},
+ {z:"zona-sul",h:"Leblon",n:"Sushi Leblon",a:"Rua Dias Ferreira, 256 – Leblon, Rio de Janeiro – RJ, 22431-050",ig:"sushileblon",
+  t:"Quando “Sushi” dá match com “Leblon”, o combinado aqui é pedir foie gras com badalação. Gente bonita, bronzeada e de bem com a vida, artista de TV e foto de comida são o que mais se vê nesse japonês estrela. O preço e a espera dizem que compensa, pois quem experimenta não arreda o pé daquela fila."},
+ {z:"zona-sul",h:"Leblon",n:"Giuseppe Grill",a:"Av. Bartolomeu Mitre, 370 – Leblon, Rio de Janeiro – RJ, 22431-002",ig:"giuseppegrill",
+  t:"Os veganos que me desculpem, mas no Rio de Vinícius, um belo bife na brasa é fundamental. Corte na própria carne o animal racional onívoro que não saliva com “carpaccio de picanha levemente selado”, ou “costela assada por mais de 8 horas”. A pedida dos frutos do mar serve quem ama mamíferos de outra forma."},
+ {z:"zona-sul",h:"Leblon",n:"BB Lanches",a:"Rua Aristides Espínola, 64 – Leblon, Rio de Janeiro – RJ",ig:"bblanches_oficial",
+  t:"Lanchonetão clássico do café da manhã de quem madruga, da larica pós-praia e do mata-fome de quem volta pra casa depois do zero a zero na balada. Rola da friturança limpinha com pastel de balcão ao lanche natureba pra não acordar precisando de uma ponte de safena com ressaca moral do Baixo Leblon."},
+ {z:"zona-sul",h:"Leblon",n:"Bar d'Hôtel",a:"Av. Delfim Moreira, 696 – Leblon, Rio de Janeiro – RJ, 22441-000",ig:"bar_dhotel",
+  t:"Mais deslocado que pinguim de chuteira, o “chope de tangerina” puxa sardinha pra esse retro-chic-bar-bistrô. Sua jornada em busca do drink perfeito acaba nas invenções do mixólogo Tai Barbin. Já o confit de pato da chef Lydia Gonzalez não fica boiando ao dizer pata aqui, pata acolá para o que veio."},
+ {z:"zona-sul",h:"Leblon",n:"Baixo Bebê",a:"Av. Delfim Moreira, na altura do 851, Posto 12 – Leblon, Rio de Janeiro – RJ, 22441-000",ig:null,
+  t:"A fila de carrinhos no quiosque do Posto 12 é um sinal: estacione no Leblon. O Shangri-la praiano dos pimpolhos dá cercadinho, brinquedos, piscininhas, trocadores, fraldário, entre outros mimos pro papai e pra mamãe. Aproveite a folga e curta a parada sem culpa. Porque hoje é dia de relax, bebê!"},
+ {z:"zona-sul",h:"Gávea",n:"Baixo Gávea / BG",a:"Praça Santos Dumont, 126, loja B – Gávea, Rio de Janeiro – RJ, 22470-060",ig:"bgmais.bar",
+  s:{t:"O BG Bar hoje funciona como BG+",k:"warn"},
+  t:"Prazer, Bêgê! Quem é daqui me chama assim. Minha casa é a Pça. Santos Dumont. É só chegar como estiver. Mermão? Amigo, Zé? O garçom do BG Bar, melhor chamar pelo nome. E o negócio é beber em pé. Deu fome? Braseiro, Hipódromo, Pe'ahi e Guimas. Quer mesa? Sem pressa. E seja o que o Cristo quiser."},
+ {z:"zona-sul",h:"Jardim Botânico",n:"Bar do Horto",a:"Rua Pacheco Leão, 780 – Jardim Botânico, Rio de Janeiro – RJ (endereço da época)",ig:null,
+  s:{t:"Fechado. O endereço é o da época",k:"gone"},
+  t:"Sente-se nas mesinhas de uma calçada bucólica do século passado. O casarão respira ar puro do cangote do Jardim Botânico, a decoração é viva e até o bolinho de arroz, cartão de visita, é arbóreo. Mas, lembre-se: os cubos de carne de avestruz ao curry são de matar, então não alimente os macaquinhos."},
+ {z:"zona-sul",h:"Vidigal",n:"Bar da Laje",a:"Rua Armando Almeida Lima, 8 – Vidigal, Rio de Janeiro – RJ",ig:"bardalaje",
+  t:"Churras, sol e pipa, a laje é uma instituição nos morros da vida. Seu rolê no Vidigal não pode deixar esse bar fora da pista. A taxa do samba, feijoada e vista são bem pagas e, pra quem não se aventura com mototáxi da subida, eles até buscam de Kombi em casa. É só ligar e combinar a corrida."},
+ {z:"zona-sul",h:"Vidigal",n:"Campo de futebol society e quadra poliesportiva do Vidigal",a:"Morro do Vidigal – Vidigal, Rio de Janeiro – RJ",ig:null,
+  s:{t:"Não achei o endereço exato da quadra",k:"warn"},
+  t:"Até quem é perna de pau no país do futebol, sabe que vencer pelo esporte é o sonho de muita criança da favela. Um campo society e uma quadra bacana para quem só batia bola na poeira traz uma esperança no peito da galera. Quando passar no Vidigal, mande um Salve Jorge pra molecada, fera."},
+ {z:"zona-sul",h:"Urca",n:"Urca",a:"Bairro da Urca; a Mureta fica na Av. João Luís Alves – Urca, Rio de Janeiro – RJ",ig:null,
+  t:"Urca, sua lôca! Nunca te pedi nada e cê vira um bairro com jeitinho de interior e a cara da Mureta? O que falar dessa Urca da Praia Vermelha, do Bondinho e pôr-do-sol da Guanabara? Dos bares hypados aos botecos da “Pobreta”, o cantinho outsider do muro que a gente mal conhece mas já considera pacas?"},
+ {z:"zona-sul",h:"Urca",n:"Praia Vermelha",a:"Praça General Tibúrcio, s/n – Urca, Rio de Janeiro – RJ, 22290-270",ig:null,
+  t:"Praia de águas calmas, amiga da garotada, pra Zona Sul não perde nada. Com 300 metros de extensão, e mesmo com samba de sexta no calçadão, é rota de fuga da badalação. E, vermelha porque, você pode querer saber. Espere pelo pôr-do-sol, olhe pra areias escuras e grossas. Só assim vai dá pra ver."},
+ {z:"zona-sul",h:"Urca",n:"Pão de Açúcar",a:"Av. Pasteur, 520 – Urca, Rio de Janeiro – RJ, 22290-240",ig:"parquebondinho",
+  t:"Quer fazer sucesso no postal, sorrir, mitar? O bonde pro morro com cara de pão é o lugar. Vale a fila pra subir na linha? Assim, assim... Trilha a pé com os amigos? Aí sim! Levanta a mãozinha, enquadra a Baía de Guanabara na palma da mão. É o cenário do Pão de Açúcar que vai tomar seu coração."},
+ {z:"zona-sul",h:"Botafogo",n:"Bar Bukowski",a:"Rua Álvaro Ramos, 270 – Botafogo, Rio de Janeiro – RJ, 22280-110",ig:"barbukowski",
+  t:"Rocker leite com pêra faz fila com os velha-guarda no casarão que manda alô pro Velho Safado. Quem sabe se faz de vivo e chega antes de virar abóbora pra não mofar na porta lá fora. Sobreviveu até 04:20 concorre a mil reais do VALE PORRE pra ver mesmo se encontrou o que se ama e pelo que se morre."},
+ {z:"zona-sul",h:"Botafogo",n:"Naturalie Bistrô",a:"Rua Visconde de Caravelas, 5 – Botafogo, Rio de Janeiro – RJ, 22271-021",ig:"onaturalie",
+  s:{t:"Encerrou as atividades em 2026, segundo o Google",k:"gone"},
+  t:"Papo reto pra contar pros netos: antes das máquinas dominarem o mundo, comida de verdade era integral, fresca, orgânica e sazonal. E preparada por pessoas como a chef Nathalie Passos. Peça a sugestão do dia e, sem glúten e lactose, com açúcar e com afeto, prove o que vai ser o seu brownie predileto."},
+ {z:"zona-sul",h:"Catete",n:"The Maze",a:"Rua Tavares Bastos, 414, casa 66 – Comunidade Tavares Bastos, Catete, Rio de Janeiro – RJ, 22221-030",ig:"themaze_rio",
+  t:"Em tempos de Jogos do Olimpo, conheça o labirinto. Feito no alto da comunidade Tavares Bastos, o hostel-bar híbrido não é um minotauro, mas já ganhou seu status de mito. Vale a pena se perder entre a arquitetura única, a vista do Pão de Açúcar e a noite de jazz, que acontece nas 1as sextas do mês."},
+
+ // CENTRO E SANTA TERESA
+ {z:"centro",h:"Centro",n:"Museu Nacional de Belas Artes",a:"Av. Rio Branco, 199 – Centro, Rio de Janeiro – RJ, 20040-008",ig:"museunacionaldebelasartes",
+  t:"Leva um sanduba de mortadela e reserva umas horas para um dos museus mais importantes da nossa república. Só a “A Batalha do Avaí”, de Pedro Américo, vale ser visto pelo mesmo tempo que um discurso do Fidel. Domingo é grátis, mas nos outros dias ainda custa menos que uma coxinha do Leblon."},
+ {z:"centro",h:"Centro",n:"Cinelândia",a:"Praça Floriano, s/n – Centro, Rio de Janeiro – RJ, 20031-050 · Bar Amarelinho: Praça Floriano, 55",ig:"amarelinhooficial",igLabel:"Instagram do Amarelinho",
+  t:"Se você insiste em classificar, a Cinelândia é uma praça com nome de marechal, sitiada pelo Theatro Municipal, o Cine Odeon e a Biblioteca Nacional. Entre um monumento e outro, sinta o Rio pulsando com um chope no Bar Amarelinho porque, se no peito do Centro bate um coração, esse coração é aqui."},
+ {z:"centro",h:"Centro",n:"Confeitaria Colombo",a:"Rua Gonçalves Dias, 32 – Centro, Rio de Janeiro – RJ, 20050-030",ig:"confeitariacolombo",
+  t:"Ponto de figurões e escritores, trocentos anos de história. Muito mármore, vidro e jacarandá, tá! Quer uma nova? A Colombo foi a 1a casa comercial do Brasil a aceitar mulheres solteiras e desacompanhadas. Prove os doces e, quando tirar a selfie no espelho belga, lembre-se da habitué Chiquinha Gonzaga."},
+ {z:"centro",h:"Centro",n:"Igreja de Nossa Senhora da Candelária",a:"Praça Pio X, s/n – Centro, Rio de Janeiro – RJ, 20040-020",ig:"igrejadacandelaria",
+  t:"Ah, jura? Quem vê assim, não crê que ela já foi uma capelinha. Nascida em 1634, filha de promessa, a cada século, uma nova senhora: barroca, neoclássica, gótica. Tragédia trevosa? Esquece essa história. Quando entrar, olhe bem pra cima. Tudo que ela viveu está lá nos painéis de Zeferino da Costa."},
+ {z:"centro",h:"Centro",n:"Mosteiro de São Bento",a:"Rua Dom Gerardo, 68 – Centro, Rio de Janeiro – RJ, 20090-030",ig:"mosteirodesaobentorj",
+  t:"Suba o Morro do Mosteiro, jovem mochileiro. A paz vai invadir o seu coração no recanto zen do Centrão. Se o silêncio do pátio vale ouro, imagina meditar sob olhares dourados da arte sacra dos altares? Já as apresentações de canto gregoriano nas manhãs de domingo não são segredo, então acorde cedo."},
+ {z:"centro",h:"Centro",n:"Restaurante Albamar",a:"Praça Marechal Âncora, 184 – Centro, Rio de Janeiro – RJ, 20021-200",ig:"albamarestaurante",
+  t:"Na placa tá Albamar, mas pode chamar de máquina do tempo. Feche as portas do elevador sanfonado, e o Rio Antigo chegou. Seja servido como a fina flor da sociedade dos anos 30, com um panorama 360° do Porto e Ilha Fiscal. A especialidade é frutos do mar, ao dizer tchau, agradeça por todos os peixes."},
+ {z:"centro",h:"Centro",n:"Aeroporto Santos Dumont",a:"Praça Senador Salgado Filho, s/n – Centro, Rio de Janeiro – RJ, 20021-340",ig:null,
+  t:"O tempo fechou no espaço aéreo do Santos Dumont. Calma! É só nos dias da Vela, e nas horas da competição. Saia com antecedência de bem mais de uma hora, vale carro ou táxi de cooperativa, mas a pedida em tempos de lotação é curtir a paisagem da janela em conta do ar-condicionado do Frescão."},
+ {z:"centro",h:"Centro",n:"Museu do Amanhã",a:"Praça Mauá, 1 – Centro, Rio de Janeiro – RJ, 20081-240",ig:"museudoamanha",
+  t:"Pare, apenas pare pra pensar. Não importa pra onde você vai. Faz um pit stop aqui e pensa numa parada: o que você pode fazer hoje para mudar o mundo em que vai morar daqui a, vamos ver, uns 50 anos? Porque, se você tivesse parado no Museu do Amanhã ontem, o futuro já podia ser melhor. Morou?"},
+ {z:"centro",h:"Centro",n:"Central do Brasil",a:"Praça Cristiano Ottoni, s/n – Centro, Rio de Janeiro – RJ, 20221-250",ig:null,
+  t:"Milhões de filhos, mães e pais paulistas, avôs pernambucanos, bisavôs mineiros e tataravôs baianos passam diariamente por essa estação de trem estrela de cinema. Do Centrão pra Zona Norte e Oeste, é bom ficar ligado nos horários de pico. Sabe como é: aonde circula dinheiro também anda bandoleiro."},
+ {z:"centro",h:"Lapa",n:"Lapa",a:"Arcos da Lapa, Largo da Lapa – Centro, Rio de Janeiro – RJ",ig:null,
+  t:"A Lapa é o bairro da malandragem vadia que virou reduto de boa música, cultura e boemia. A revitalização dos seus arcos, arquitetura e gastronomia são um show à parte nas ruas do centro onde abundam turistas, gente da gema, madames satãs e senhorinhas. Cai nessa gandaia, porque in Lapa we trust."},
+ {z:"centro",h:"Saúde",n:"The Week",a:"Rua Sacadura Cabral, 137 – Saúde, Rio de Janeiro – RJ, 20081-261 (endereço da época)",ig:null,
+  s:{t:"Fechou em 2021",k:"gone"},
+  t:"Ibiza, Berlim? Pfff! Considerada uma das melhores noites de música eletrônica e pop pela galera LGBT do Rio, a pista e a estrutura dessa boate construída pra lacrar na Zona Portuária não fica devendo nada pros clubes mais bafônicos do gênero no mundo. Se joga como se não houvesse amanhã!"},
+ {z:"centro",h:"Santa Teresa",n:"Parque das Ruínas",a:"Rua Murtinho Nobre, 169 – Santa Teresa, Rio de Janeiro – RJ, 20241-050",ig:"parquedasruinasoficial",
+  s:{t:"Hoje se chama Parque Glória Maria",k:"warn"},
+  t:"Se essas ruínas falassem, tocassem, dançassem e pintassem, elas seriam João do Rio, Villa Lobos, Isadora Duncan e Tarsila do Amaral. A alma dos saraus da Dona Laurinda, a mecenas modernista, sobrevivem na programação do centro cultural. E olha que ainda dá um check-in no Places com foto fenomenal."},
+ {z:"centro",h:"Santa Teresa",n:"Bar do Mineiro",a:"Rua Paschoal Carlos Magno, 99 – Santa Teresa, Rio de Janeiro – RJ, 20240-290",ig:"bardomineiro",
+  t:"A feijoada e o pastel feito com ela mesma representam as capitingas de Seu Diógenes Paixão. Informal como só ele, o boteco deita na cama porque é centro da atenção mesmo sendo honestão. Meça sua pressa, parça. É o tal do logo ali de mineiro. Bebe algo na calçada porque aqui a paciência é amiga da perfeição."},
+
+ // ZONA NORTE
+ {z:"zona-norte",h:"Andaraí",n:"Renascença Clube",a:"Rua Barão de São Francisco, 54 – Andaraí, Rio de Janeiro – RJ, 20560-032",ig:"renascencaclube",
+  t:"De bobeira na segunda? Toca pro Andaraí e cai no Samba do Trabalhador. Pra alma não se atrofiar, Moacyr Luz convida outros músicos – e todo mundo que está de folga – pra sua roda no “Rena”. Começa fim de tarde e tem fim às 22h, porque dia seguinte é dia de voltar pro batente, minha gente."},
+ {z:"zona-norte",h:"Mangueira",n:"GRES Estação Primeira de Mangueira",a:"Quadra: Rua Visconde de Niterói, 1072 – Mangueira, Rio de Janeiro – RJ",ig:"mangueira_oficial",
+  t:"E aí, vamos ver a mangueira en...SAIAR? Trocadilho infame de lado, o que importa além dos ensaios marcados a partir de setembro na quadra verde e rosa é a feijoada. Marca aí na agenda: o samba e o rango rolam soltos nos inícios das tardes do 2º sábado de cada mês. É pra ver e... Upa lê lê!"},
+ {z:"zona-norte",h:"São Cristóvão",n:"Feira de São Cristóvão",a:"Campo de São Cristóvão, s/n – São Cristóvão, Rio de Janeiro – RJ, 20921-240",ig:"saocristovaofeiraoficial",
+  t:"A maior feira do Nordeste fora do Nordeste abriga mais de 700 barracas com comida típica, artesanato e 4 palcos com muito forró, xote e baião. Atravesse o portal para 9 estados brasileiros, mas não se esqueça: só volte pro Rio depois de tirar uma selfie arretada com a estátua de Luiz Gonzaga."},
+ {z:"zona-norte",h:"Vila Isabel",n:"Yeasteria",a:"Rua Pereira Nunes, 266 – Vila Isabel, Rio de Janeiro – RJ, 20511-120",ig:"yeasteria",
+  s:{t:"Endereço atual. Confira se é o mesmo de 2016",k:"warn"},
+  t:"Se a Biblioteca de Alexandria fosse um bar, ela seria a Yeasteria. Ganhe séculos de conhecimento cervejeiro passeando pelos mais de 200 rótulos de ampolas, identificadas por fichas que listam nome, amargura, corpo, cor, origem, estilo e nível alcoólico. Vai na maciota, quando a vida é dura, levedura!"},
+ {z:"zona-norte",h:"Alto da Boa Vista",n:"Restaurante Os Esquilos",a:"Estrada Barão de Escragnolle, s/n, Floresta da Tijuca – Alto da Boa Vista, Rio de Janeiro – RJ, 20531-730",ig:"osesquilos",
+  t:"Bote o Tico e o Teco pra trabalhar e descubra um jardim de delícias terrenas nesse restaurante escondido no coração da Floresta da Tijuca. Nos fins de semana, o paraíso é a feijoada. No inverno, fondues de queijo e carne na beira da lareira. Não aceita cartão, então programe bem sua expedição."},
+
+ // BARRA E ZONA OESTE
+ {z:"zona-oeste",h:"Barra da Tijuca",n:"Bar 399",a:"Av. Olegário Maciel, 231, loja H – Barra da Tijuca, Rio de Janeiro – RJ, 22621-200",ig:null,
+  t:"Se a Olegário Maciel é rua da alegria no Baixo Barra, o 399 tem parte da culpa. A parada pra 3 cervejas e 99 histórias foi a partida pra deixar a esquina pequena pra tanta juventude feliz e bronzeada. Aloha! Vem sentir essa vibe irada, mesmo que seja um cinquentão de sunga da cor da areia da praia."},
+ {z:"zona-oeste",h:"Barra da Tijuca",n:"Blá Blá Champanheria",a:"Av. Érico Veríssimo, 843 – Barra da Tijuca, Rio de Janeiro – RJ, 22621-180",ig:"blablachampanheria",
+  s:{t:"A casa passou por mudanças. Confirme antes de ir",k:"warn"},
+  t:"Veuve Clicquot, Moet Chandon, Brut e Casa Valduga fazem borbulhas de amor na banheira entre as conversas animadas dos moderninhos da Barra. Se vai para o rodízio de comida japonesa, reserve uma mesa e beba estrelas ao som de deep house como se estivesse na Riviera francesa."},
+ {z:"zona-oeste",h:"Barra da Tijuca",n:"Rio Design Barra",a:"Av. das Américas, 7777 – Barra da Tijuca, Rio de Janeiro – RJ, 22793-081",ig:"riodesignbarra",
+  t:"Sem nariz empinado e acotovelação, moda, cultura e alta gastronomia (porque gourmet já tá demodé) flanam de chinelo e chapéu panamá nos corredores desse shopping diferentão. Levar os rebentos na LEGO Store, comprar balinha nas Americanas e pegar um filme cabeça na sala VIP resumem o passeio padrão."},
+ {z:"zona-oeste",h:"Recreio dos Bandeirantes",n:"Pontal",a:"Praia do Pontal, final da Av. Lúcio Costa – Recreio dos Bandeirantes, Rio de Janeiro – RJ",ig:null,
+  t:"Do Leme até lá, não há nada igual. Sem motivos pra ir embora, uma pernada de meia hora leva da Praça Tim Maia à Pedra do Pontal. O clima azul da cor do mar é o ponto de partida e chegada das provas de contrarrelógio do Ciclismo Olímpico, da Marcha Atlética e do Paraciclismo de Estrada. Partiu?"},
+ {z:"zona-oeste",h:"Barra de Guaratiba",n:"Restaurante do Bira",a:"Estrada da Vendinha, 68 – Barra de Guaratiba, Rio de Janeiro – RJ, 23020-810",ig:"restaurantedobira",
+  t:"Que D.O.M. o quê, Zé gourmet. Um dos 101 melhores lugares pra se comer de verdade no mundo, eleito por revistão, tá no meio do mato e seu chef é um pescador surfista sessentão. Força na moqueca, porque ela serve um time futebol de salão. Ou peça meia e volte da Restinga de Marabaia de barriga cheia."}
+];
+
+const PIN_SVG = '<svg viewBox="0 0 18 22" aria-hidden="true"><path fill="currentColor" d="M9 0a8 8 0 0 0-8 8c0 6 8 14 8 14s8-8 8-14a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mapsUrl = p => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.n + ", " + p.a.replace(/\(endereço da época\)/,""));
+
+function card(p){
+  const st = p.s ? `<span class="status ${p.s.k === "gone" ? "gone" : ""}">${esc(p.s.t)}</span>` : "";
+  const ig = p.ig
+    ? `<a href="https://www.instagram.com/${esc(p.ig)}/" target="_blank" rel="noopener">${esc(p.igLabel || "@" + p.ig)}</a>`
+    : `<span class="none">Sem Instagram oficial</span>`;
+  return `<article class="pin" data-search="${esc((p.n + " " + p.h + " " + p.a + " " + p.t).toLowerCase())}">
+    <div class="pin-top">${PIN_SVG}<div><h3>${esc(p.n)}</h3><div class="hood">${esc(p.h)}</div></div></div>
+    <p class="txt">${esc(p.t)}</p>
+    ${st}
+    <div class="meta">
+      <div class="addr"><small>Endereço</small>${esc(p.a)}</div>
+      <div class="links"><a href="${mapsUrl(p)}" target="_blank" rel="noopener">Ver no mapa</a>${ig}</div>
+    </div>
+  </article>`;
+}
+
+function render(){
+  const main = document.getElementById("main");
+  const chips = document.getElementById("chips");
+  const search = chips.querySelector(".search");
+  let html = "";
+  ZONES.forEach(z => {
+    const items = P.filter(p => p.z === z.id).sort((a,b) => HOOD_ORDER.indexOf(a.h) - HOOD_ORDER.indexOf(b.h));
+    html += `<section class="zone" id="${z.id}"><div class="zone-head"><h2>${esc(z.name)}</h2><p>${items.length} lugares · ${esc(z.desc)}</p></div><div class="grid">${items.map(card).join("")}</div></section>`;
+    const a = document.createElement("a");
+    a.className = "chip"; a.href = "#" + z.id;
+    a.innerHTML = `${esc(z.name)}<span>${items.length}</span>`;
+    chips.insertBefore(a, search);
+  });
+  html += `<p class="empty" id="empty" hidden>Nenhum lugar encontrado. Tente outro nome ou bairro.</p>`;
+  main.innerHTML = html;
+  const changed = P.filter(p => p.s).length;
+  document.getElementById("stats").innerHTML =
+    `<span><b>${P.length}</b> pins</span><span><b>${ZONES.length}</b> zonas</span><span><b>${P.filter(p=>p.ig).length}</b> com Instagram</span><span><b>${changed}</b> mudaram desde 2016</span>`;
+}
+
+function filter(q){
+  q = q.trim().toLowerCase();
+  let any = false;
+  document.querySelectorAll(".zone").forEach(sec => {
+    let n = 0;
+    sec.querySelectorAll(".pin").forEach(el => {
+      const show = !q || el.dataset.search.includes(q);
+      el.hidden = !show; if (show) n++;
+    });
+    sec.hidden = n === 0; if (n) any = true;
+  });
+  document.getElementById("empty").hidden = any;
+}
+
+render();
+document.getElementById("q").addEventListener("input", e => filter(e.target.value));
+</script>
+
+</body>
+</html>

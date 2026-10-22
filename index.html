@@ -416,7 +416,7 @@
         </div>
         <div class="stat reveal">
           <div class="stat-value">170 mil</div>
-          <div class="stat-label">interações de atendimento analisadas com humano + agentes de curadoria data-driven</div>
+          <div class="stat-label">interações de atendimento analisadas por curadores humanos e sintéticos</div>
         </div>
         <div class="stat reveal">
           <div class="stat-value">+20</div>
@@ -526,7 +526,25 @@
       <div class="cases">
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">01 —</span> Qualidade &amp; capacidade</div>
+          <div class="case-kicker"><span class="idx">01 —</span> Produto de dados</div>
+          <h3>Curadores sintéticos: análise de 100% das conversas do coach de atendimento</h3>
+          <span class="badge">170.098 interações em 3 meses · 35× a capacidade manual</span>
+          <dl>
+            <dt>Antes</dt>
+            <dd>Um curador humano só alcançava amostras de 30 conversas por agente a cada sprint. As falhas ficavam invisíveis, a prioridade dependia de percepção e quase toda resposta incorreta, incompleta ou com dislike era tratada como problema de conteúdo.</dd>
+            <dt>Entrega</dt>
+            <dd>Começou como um prompt no Copilot e virou um <strong>agente com duas skills</strong>: uma investiga as conversas em produção, a outra compara a performance das instruções dos agentes. O curador humano envia a base, escolhe as análises e aprova o plano. Recebe hipóteses testáveis, experimentos e planos de ação por camada (plataforma, busca, bases de conhecimento ou instruções), com cada achado marcado como evidência, inferência ou hipótese.</dd>
+            <dt class="result">Resultado</dt>
+            <dd class="result">Em 3 meses, curadores humanos e sintéticos analisaram juntos <strong>170.098 interações</strong>. Os achados possibilitaram <strong>191 procedimentos de atendimento revisados</strong>, 9 novos procedimentos e 4 novos prompts de instruções para os agentes. Em um dos coaches, as análises passaram de dezenas para milhares por sprint, <strong>35× a capacidade manual</strong>; em um piloto, os likes nas respostas avaliadas subiram de <strong>57% para 89%</strong>. A amostra também escondia que <strong>46,8% das falhas eram de busca</strong>, não de conteúdo, e que KBs marcados para desativação estavam em <strong>12% das respostas</strong>.</dd>
+            <dt>Destaque</dt>
+            <dd>Um dos 4 cases da diretoria de atendimento selecionados para o AI Product Summit do Itaú (dez/2026).</dd>
+          </dl>
+          <div class="spacer"></div>
+          <div class="tags"><span class="chip">Curadoria</span><span class="chip">Agente + skills</span><span class="chip">Humano no circuito</span><span class="chip">Data Product</span></div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-kicker"><span class="idx">02 —</span> Qualidade &amp; capacidade</div>
           <h3>Reengenharia de prompts nos agentes do Coach de Atendimento</h3>
           <span class="badge">11/12 agentes em produção · −39,8% no tempo por interação</span>
           <dl>
@@ -542,7 +560,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">02 —</span> Escala de conteúdo</div>
+          <div class="case-kicker"><span class="idx">03 —</span> Escala de conteúdo</div>
           <h3>Megaprompt de reescrita de roteiros de atendimento das Centrais PF</h3>
           <span class="badge">3× capacidade · 7 → 171 fichas técnicas</span>
           <dl>
@@ -558,7 +576,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">03 —</span> Tom de voz</div>
+          <div class="case-kicker"><span class="idx">04 —</span> Tom de voz</div>
           <h3>Agente de tom de voz para mensageria de tracking de atendimento no WhatsApp</h3>
           <span class="badge">133 máscaras adaptadas · −17% no tamanho</span>
           <dl>
@@ -574,7 +592,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">04 —</span> Curadoria em escala</div>
+          <div class="case-kicker"><span class="idx">05 —</span> Curadoria em escala</div>
           <h3>Curadoria data-driven e conferência de áudios na URA</h3>
           <span class="badge">37 mil frases em 1 rodada · 45% menos escuta</span>
           <dl>
@@ -590,7 +608,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">05 —</span> Governança de prompts</div>
+          <div class="case-kicker"><span class="idx">06 —</span> Governança de prompts</div>
           <h3>Ciclo determinístico de melhoria de taxonomia para transcrições de atendimento</h3>
           <span class="badge">4.500 conversas pareadas · 100% de aderência ao contrato</span>
           <dl>
@@ -606,7 +624,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">06 —</span> Experiência do cliente</div>
+          <div class="case-kicker"><span class="idx">07 —</span> Experiência do cliente</div>
           <h3>Tradução de respostas operacionais em mensagens para o cliente final nas jornadas de Cartões</h3>
           <span class="badge">Em produção · 4.131 conversas analisadas</span>
           <dl>
@@ -621,22 +639,6 @@
           </dl>
           <div class="spacer"></div>
           <div class="tags"><span class="chip">Cartões</span><span class="chip">Chat + voz</span><span class="chip">Guardrails</span><span class="chip">Avaliação cega</span></div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case-kicker"><span class="idx">07 —</span> Produto de dados</div>
-          <h3>Curadoria data-driven do coach de atendimento</h3>
-          <span class="badge">170 mil interações · 9 agentes · por release</span>
-          <dl>
-            <dt>Antes</dt>
-            <dd>Curadoria por amostra, com prioridade definida por percepção. O dislike mostrava o sintoma, mas não onde estava a falha.</dd>
-            <dt>Entrega</dt>
-            <dd>Um curador sintético ao lado do humano: megaprompt e um agente com 2 skills (produção e testes), com aprovação humana antes de rodar. Na última release, gerou 191 roteiros revisados, 9 novos e 4 novos prompts de instruções para os agentes.</dd>
-            <dt class="result">Resultado</dt>
-            <dd class="result">Cada falha passou a ir para a camada certa. Achados que a amostra não mostrava: <strong>46,8% dos casos eram falha de busca</strong>, não de conteúdo. KBs marcados para desativação estavam em <strong>12% das respostas</strong>.</dd>
-          </dl>
-          <div class="spacer"></div>
-          <div class="tags"><span class="chip">Coach</span><span class="chip">Data Product</span><span class="chip">North Star</span></div>
         </article>
 
         <article class="case reveal">

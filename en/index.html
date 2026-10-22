@@ -416,7 +416,7 @@
         </div>
         <div class="stat reveal">
           <div class="stat-value">170,000</div>
-          <div class="stat-label">customer service interactions analyzed by humans plus data-driven curation agents</div>
+          <div class="stat-label">customer service interactions analyzed by human and synthetic curators</div>
         </div>
         <div class="stat reveal">
           <div class="stat-value">+20</div>
@@ -526,7 +526,25 @@
       <div class="cases">
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">01 —</span> Quality &amp; capacity</div>
+          <div class="case-kicker"><span class="idx">01 —</span> Data product</div>
+          <h3>Synthetic curators: analyzing 100% of the agent-assist coach's conversations</h3>
+          <span class="badge">170,098 interactions in 3 months · 35× manual capacity</span>
+          <dl>
+            <dt>Before</dt>
+            <dd>A human curator could only reach samples of 30 conversations per agent each sprint. Failures stayed invisible, priorities depended on perception, and almost every wrong, incomplete or disliked answer was treated as a content problem.</dd>
+            <dt>Delivery</dt>
+            <dd>It started as a prompt in Copilot and grew into an <strong>agent with two skills</strong>: one investigates production conversations, the other compares how the agents' instructions perform. The human curator sends the dataset, picks the analyses and approves the plan, then gets testable hypotheses, experiments and action plans by layer (platform, retrieval, knowledge bases or instructions), with each finding tagged as evidence, inference or hypothesis.</dd>
+            <dt class="result">Result</dt>
+            <dd class="result">In 3 months, human and synthetic curators analyzed <strong>170,098 interactions</strong> together. Their findings led to <strong>191 revised customer service procedures</strong>, 9 new procedures and 4 new instruction prompts for the agents. In one of the coaches, analyses went from dozens to thousands per sprint, <strong>35× the manual capacity</strong>; in a pilot, likes on evaluated answers rose from <strong>57% to 89%</strong>. The sample had also hidden that <strong>46.8% of failures were retrieval</strong>, not content, and that knowledge bases flagged for retirement appeared in <strong>12% of answers</strong>.</dd>
+            <dt>Highlight</dt>
+            <dd>One of 4 cases from Itaú's customer service division selected for the bank's AI Product Summit (Dec 2026).</dd>
+          </dl>
+          <div class="spacer"></div>
+          <div class="tags"><span class="chip">Curation</span><span class="chip">Agent + skills</span><span class="chip">Human in the loop</span><span class="chip">Data Product</span></div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-kicker"><span class="idx">02 —</span> Quality &amp; capacity</div>
           <h3>Prompt re-engineering for the agent-assist coach</h3>
           <span class="badge">11/12 agents in production · −39.8% time per interaction</span>
           <dl>
@@ -542,7 +560,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">02 —</span> Content at scale</div>
+          <div class="case-kicker"><span class="idx">03 —</span> Content at scale</div>
           <h3>Megaprompt that rewrites service scripts for retail contact centers</h3>
           <span class="badge">3× capacity · 7 → 171 technical sheets</span>
           <dl>
@@ -558,7 +576,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">03 —</span> Tone of voice</div>
+          <div class="case-kicker"><span class="idx">04 —</span> Tone of voice</div>
           <h3>Tone-of-voice agent for service tracking messages on WhatsApp</h3>
           <span class="badge">133 templates adapted · −17% length</span>
           <dl>
@@ -574,7 +592,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">04 —</span> Curation at scale</div>
+          <div class="case-kicker"><span class="idx">05 —</span> Curation at scale</div>
           <h3>Data-driven curation and audio review for the IVR</h3>
           <span class="badge">37,000 phrases in 1 run · 45% less listening</span>
           <dl>
@@ -590,7 +608,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">05 —</span> Prompt governance</div>
+          <div class="case-kicker"><span class="idx">06 —</span> Prompt governance</div>
           <h3>Deterministic improvement cycle for the customer service transcript taxonomy</h3>
           <span class="badge">4,500 paired conversations · 100% contract adherence</span>
           <dl>
@@ -606,7 +624,7 @@
         </article>
 
         <article class="case reveal">
-          <div class="case-kicker"><span class="idx">06 —</span> Customer experience</div>
+          <div class="case-kicker"><span class="idx">07 —</span> Customer experience</div>
           <h3>Turning operational answers into customer-ready messages in credit card journeys</h3>
           <span class="badge">In production · 4,131 conversations analyzed</span>
           <dl>
@@ -621,22 +639,6 @@
           </dl>
           <div class="spacer"></div>
           <div class="tags"><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Blind review</span></div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case-kicker"><span class="idx">07 —</span> Data product</div>
-          <h3>Data-driven curation for the agent-assist coach</h3>
-          <span class="badge">170,000 interactions · 9 agents · per release</span>
-          <dl>
-            <dt>Before</dt>
-            <dd>Sample-based curation, with priorities set by perception. Dislikes showed the symptom, not where the failure was.</dd>
-            <dt>Delivery</dt>
-            <dd>A synthetic curator working next to the human one: a megaprompt and an agent with 2 skills (production and testing), with human approval before each run. In the latest release it produced 191 revised scripts, 9 new ones and 4 new instruction prompts for the agents.</dd>
-            <dt class="result">Result</dt>
-            <dd class="result">Each failure now goes to the right layer. Findings the sample never showed: <strong>46.8% of cases were retrieval failures</strong>, not content. Knowledge bases flagged for retirement appeared in <strong>12% of answers</strong>.</dd>
-          </dl>
-          <div class="spacer"></div>
-          <div class="tags"><span class="chip">Coach</span><span class="chip">Data Product</span><span class="chip">North Star</span></div>
         </article>
 
         <article class="case reveal">

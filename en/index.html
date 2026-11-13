@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roc de Castro — AI product and conversational experience design</title>
+<title>Roc de Castro: AI product, agent experience (AX) and conversational design</title>
 <meta name="description" content="Roc de Castro's portfolio: generative AI products and experience for customer service. Prompt and context engineering, agents, skills and data-driven curation.">
 <link rel="canonical" href="https://rocdecastro.github.io/en/">
 <meta property="og:type" content="website">
@@ -145,6 +145,16 @@
   .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); box-shadow: var(--shadow-md); }
   .btn .arrow { transition: transform var(--tr); }
   .btn:hover .arrow { transform: translateX(3px); }
+
+  /* ---------- AX ---------- */
+  .ax-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+  .ax-card { display: flex; flex-direction: column; padding: 28px 28px 24px; background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--rx); box-shadow: var(--shadow-sm); }
+  .ax-n { font-family: var(--serif); font-size: 32px; line-height: 1; color: var(--accent); }
+  .ax-card h3 { margin: 14px 0 10px; font-family: var(--serif); font-size: 21px; font-weight: 500; line-height: 1.3; }
+  .ax-card p { margin: 0; font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+  .ax-card .ax-cases { margin-top: auto; padding-top: 16px; font-family: var(--sans); font-size: 12.5px; font-weight: 600; color: var(--text-muted); }
+  .ax-card .ax-cases a { color: var(--accent); }
+  .chip.ax { color: var(--accent); border-color: var(--accent); background: var(--surface); font-weight: 600; }
 
   /* ---------- Slides ---------- */
   .slide { position: relative; padding: 112px 0; border-top: 1px solid var(--border-light); }
@@ -318,6 +328,7 @@
     .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; margin-top: 56px; }
     .elo-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
     .cases { grid-template-columns: minmax(0, 1fr); }
+    .ax-grid { grid-template-columns: minmax(0, 1fr); }
     .medium-cards { grid-template-columns: minmax(0, 1fr); }
     .research-link .medium-card { flex-direction: column; align-items: flex-start; }
     .traj-grid { grid-template-columns: minmax(0, 1fr); }
@@ -389,8 +400,8 @@
       <div class="hero-grid">
         <div>
           <span class="kicker">Portfolio · 2026</span>
-          <h1>Roc de Castro <span class="tagline"><em>AI product and conversational experience</em> design.</span></h1>
-          <p class="lede">Specialist in <strong>generative AI products and experience for customer service</strong>, in Itaú Unibanco's Voice, Data and AI division.</p>
+          <h1>Roc de Castro <span class="tagline"><em>AI product</em>, agent experience (AX) and conversational design.</span></h1>
+          <p class="lede">I build <strong>generative AI products for customer service</strong> at Itaú Unibanco, in the Voice, Data and AI division. I work on agent experience (AX): how AI agents read prompts, context and tools, and how people work with them.</p>
           <div class="actions">
             <a class="btn btn-primary" href="https://wa.me/5511966444892?text=Hi%20Roc!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">Message me on WhatsApp <span class="arrow">→</span></a>
             <a class="btn" href="#entregas">See the work</a>
@@ -426,6 +437,35 @@
     </div>
   </section>
 
+  <!-- ============ AGENT EXPERIENCE (AX) ============ -->
+  <section class="slide alt compact" id="ax">
+    <div class="wrap">
+      <span class="kicker">Agent experience (AX)</span>
+      <h2 class="display">Three questions I ask of <em>every AI agent</em></h2>
+      <p class="lede"><strong>Agent experience (AX)</strong>: prompt and context engineering, tool descriptions and how people work with AI agents.</p>
+      <div class="ax-grid">
+        <div class="ax-card reveal">
+          <span class="ax-n">1</span>
+          <h3>What does the agent read before it acts?</h3>
+          <p>Prompts, context, tool descriptions and skills. This is where the agent understands the system, or guesses.</p>
+          <p class="ax-cases">Cases <a href="#case-03">03</a>, <a href="#case-04">04</a> and <a href="#case-05">05</a></p>
+        </div>
+        <div class="ax-card reveal">
+          <span class="ax-n">2</span>
+          <h3>What does the person see, control and trust?</h3>
+          <p>The answer contact center staff read, the agent's limits and the safe path when it doesn't know.</p>
+          <p class="ax-cases">Cases <a href="#case-02">02</a>, <a href="#case-03">03</a> and <a href="#case-08">08</a></p>
+        </div>
+        <div class="ax-card reveal">
+          <span class="ax-n">3</span>
+          <h3>How do we know it works?</h3>
+          <p>Human and synthetic curation, paired and regression tests before every release.</p>
+          <p class="ax-cases">Cases <a href="#case-01">01</a>, <a href="#case-06">06</a> and <a href="#case-07">07</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ENTREGAS ============ -->
   <section class="slide" id="entregas">
     <div class="wrap">
@@ -435,7 +475,7 @@
 
       <div class="cases">
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-01">
           <div class="case-kicker"><span class="idx">01 —</span> Data product</div>
           <h3>Synthetic curators: analyzing 100% of the agent-assist copilot's conversations</h3>
           <span class="badge">170,000+ interactions · 35× manual capacity</span>
@@ -448,10 +488,10 @@
             <dd class="result"><strong>170,000+ interactions</strong> analyzed. The findings led to <strong>191 revised procedures</strong>, 9 new ones and 4 new instruction prompts. In one copilot, <strong>35× the manual capacity</strong>; in a pilot, <strong>+32 pts in likes</strong>. Most failures were in <strong>retrieval</strong>, not content, which pointed prioritization to the right layer.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Curation</span><span class="chip">Agent + skills</span><span class="chip">Human in the loop</span><span class="chip">Data Product</span></div>
+          <div class="tags"><span class="chip ax">AX · evaluation</span><span class="chip ax">AX · people with agents</span><span class="chip">Curation</span><span class="chip">Agent + skills</span><span class="chip">Human in the loop</span><span class="chip">Data Product</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-02">
           <div class="case-kicker"><span class="idx">02 —</span> Enablement &amp; facilitation</div>
           <h3>AI enablement: from local experience to organizational capability</h3>
           <span class="badge">12 workshops and sessions in 2025–2026 · 6 reusable assets</span>
@@ -466,10 +506,10 @@
             <dd class="result">The model starts from local experience and evolves into <strong>organizational capability</strong>: recurring community of practice, centralized library of prompts, skills, diagnostics and best practices, AI evaluation framework (stability, divergence and quality) and training of multipliers across squads.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Training</span><span class="chip">Facilitation</span><span class="chip">SOP taxonomy</span><span class="chip">Assets</span><span class="chip">Champions</span></div>
+          <div class="tags"><span class="chip ax">AX · people with agents</span><span class="chip">Training</span><span class="chip">Facilitation</span><span class="chip">SOP taxonomy</span><span class="chip">Assets</span><span class="chip">Champions</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-03">
           <div class="case-kicker"><span class="idx">03 —</span> Quality &amp; capacity</div>
           <h3>Prompt re-engineering for the agent-assist copilot</h3>
           <span class="badge">11/12 agents in production · −39.8% estimated time per interaction</span>
@@ -482,10 +522,10 @@
             <dd class="result"><strong>−39.8% estimated time per interaction</strong> (latency plus reading time estimated at ~200 words/min) across the 9 agents with complete measurement and <strong>+26 pts of average completeness</strong>. 89.4% of the gain comes from agents reading less, not from the model answering faster.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Copilot</span><span class="chip">Prompts V2</span><span class="chip">Reading time</span><span class="chip">Completeness</span></div>
+          <div class="tags"><span class="chip ax">AX · agent as user</span><span class="chip ax">AX · people with agents</span><span class="chip">Copilot</span><span class="chip">Prompts V2</span><span class="chip">Reading time</span><span class="chip">Completeness</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-04">
           <div class="case-kicker"><span class="idx">04 —</span> Content at scale</div>
           <h3>Megaprompt that rewrites service scripts for contact centers</h3>
           <span class="badge">3× capacity · 7 → 171 technical sheets</span>
@@ -498,10 +538,10 @@
             <dd class="result"><strong>244% acceleration</strong> and 171 sheets by Sep 2026. The biggest jumps came right after SMEs started using it (+56 in July, +47 in August).</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Megaprompt</span><span class="chip">Knowledge System</span><span class="chip">SMEs</span><span class="chip">Scale</span></div>
+          <div class="tags"><span class="chip ax">AX · agent as user</span><span class="chip">Megaprompt</span><span class="chip">Knowledge System</span><span class="chip">SMEs</span><span class="chip">Scale</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-05">
           <div class="case-kicker"><span class="idx">05 —</span> Tone of voice</div>
           <h3>Tone-of-voice agent for service tracking messages on WhatsApp</h3>
           <span class="badge">133 templates adapted · −17% length</span>
@@ -514,10 +554,10 @@
             <dd class="result"><strong>133 templates</strong> across accounts, insurance and mortgages; average of 322 → 263 characters <strong>with no information loss</strong>. In daily use by the team that owns these messages.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Content Design</span><span class="chip">WhatsApp</span><span class="chip">Audit</span><span class="chip">In use</span></div>
+          <div class="tags"><span class="chip ax">AX · agent as user</span><span class="chip">Content Design</span><span class="chip">WhatsApp</span><span class="chip">Audit</span><span class="chip">In use</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-06">
           <div class="case-kicker"><span class="idx">06 —</span> Curation at scale</div>
           <h3>Data-driven curation and audio review for the IVR</h3>
           <span class="badge">Tens of thousands of phrases in 1 run · an estimated 45% less listening</span>
@@ -530,10 +570,10 @@
             <dd class="result"><strong>74% of calls in the period analyzed</strong> covered in one run and an <strong>estimated 45% saving</strong> in human review: audio above 85% similarity no longer needs listening.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">IVR</span><span class="chip">Curation</span><span class="chip">ASR</span><span class="chip">Privacy</span></div>
+          <div class="tags"><span class="chip ax">AX · evaluation</span><span class="chip">IVR</span><span class="chip">Curation</span><span class="chip">ASR</span><span class="chip">Privacy</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-07">
           <div class="case-kicker"><span class="idx">07 —</span> Prompt governance</div>
           <h3>Deterministic improvement cycle for the customer service transcript taxonomy</h3>
           <span class="badge">4,500 paired conversations · 100% contract adherence</span>
@@ -546,10 +586,10 @@
             <dd class="result">The v3 × v4 round isolated <strong>1,538 decisive cases</strong> (34.2% disagreement) for curation. A quality gain is declared only after the answer key is checked, and the cycle caught a false win.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Taxonomy</span><span class="chip">Paired test</span><span class="chip">Governance</span><span class="chip">SME</span></div>
+          <div class="tags"><span class="chip ax">AX · evaluation</span><span class="chip">Taxonomy</span><span class="chip">Paired test</span><span class="chip">Governance</span><span class="chip">SME</span></div>
         </article>
 
-        <article class="case reveal">
+        <article class="case reveal" id="case-08">
           <div class="case-kicker"><span class="idx">08 —</span> Customer experience</div>
           <h3>Turning operational answers into customer-ready messages in credit card journeys</h3>
           <span class="badge">In production · 4,131 conversations analyzed</span>
@@ -564,7 +604,7 @@
             <dd class="result">The bottleneck is <strong>closing</strong> the conversation: when the agent confirms the customer&rsquo;s issue was resolved, <strong>2-day callbacks drop to zero</strong> in the sample.</dd>
           </dl>
           <div class="spacer"></div>
-          <div class="tags"><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Blind review</span></div>
+          <div class="tags"><span class="chip ax">AX · people with agents</span><span class="chip ax">AX · evaluation</span><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Blind review</span></div>
         </article>
 
       </div>
@@ -628,11 +668,11 @@
       </details>
 
       <div class="research-link reveal">
-        <a class="medium-card" href="https://rocdecastro.github.io/governanca-traducao-genai/" target="_blank" rel="noopener">
+        <a class="medium-card" href="https://rocdecastro.github.io/governanca-traducao-genai/en/" target="_blank" rel="noopener">
           <span class="medium-card-body">
             <span class="medium-card-tag">Independent research · in progress</span>
-            <span class="medium-card-title">Translation governance in generative AI systems</span>
-            <span class="medium-card-desc">Service design and HCI for prompt-based interactions. Written in Portuguese.</span>
+            <span class="medium-card-title">Governing translation in generative AI systems</span>
+            <span class="medium-card-desc">Service design and HCI for prompt-based interactions. In English and Portuguese.</span>
           </span>
           <span class="medium-card-link">Read the research →</span>
         </a>

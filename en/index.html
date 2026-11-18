@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Roc de Castro">
 <meta property="og:title" content="Roc de Castro · Generative AI case portfolio for customer service">
-<meta property="og:description" content="8 cases from 2026: −39.8% estimated time per interaction, 170,000 interactions analyzed and 3× script production capacity.">
+<meta property="og:description" content="9 cases from 2026: −39.8% estimated time per interaction, 170,000 interactions analyzed and 3× script production capacity.">
 <meta property="og:url" content="https://rocdecastro.github.io/en/">
 <meta property="og:image" content="https://rocdecastro.github.io/og-en.png?v=3">
 <meta property="og:image:width" content="1200">
@@ -224,6 +224,7 @@
 
   /* Entregas */
   .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 56px; }
+  .cases > .case:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .case {
     display: flex; flex-direction: column; padding: 32px 32px 26px; background: var(--surface);
     border: 1px solid var(--border-light); border-radius: var(--rx); box-shadow: var(--shadow-sm);
@@ -442,13 +443,13 @@
     <div class="wrap">
       <span class="kicker">Agent experience (AX)</span>
       <h2 class="display">Three questions I ask of <em>every AI agent</em></h2>
-      <p class="lede"><strong>Agent experience (AX)</strong>: prompt and context engineering, tool descriptions and how people work with AI agents.</p>
+      <p class="lede"><strong>Agent experience (AX)</strong>: prompt and context engineering, harnesses, tool descriptions and how people work with AI agents.</p>
       <div class="ax-grid">
         <div class="ax-card reveal">
           <span class="ax-n">1</span>
           <h3>What does the agent read before it acts?</h3>
-          <p>Prompts, context, tool descriptions and skills. This is where the agent understands the system, or guesses.</p>
-          <p class="ax-cases">Cases <a href="#case-03">03</a>, <a href="#case-04">04</a> and <a href="#case-05">05</a></p>
+          <p>Prompts, context, tool descriptions, skills and the harness: what stays with the LLM and what stays with code. This is where the agent understands the system, or guesses.</p>
+          <p class="ax-cases">Cases <a href="#case-03">03</a>, <a href="#case-04">04</a>, <a href="#case-05">05</a> and <a href="#case-09">09</a></p>
         </div>
         <div class="ax-card reveal">
           <span class="ax-n">2</span>
@@ -460,7 +461,7 @@
           <span class="ax-n">3</span>
           <h3>How do we know it works?</h3>
           <p>Human and synthetic curation, evals, paired and regression tests before every release.</p>
-          <p class="ax-cases">Cases <a href="#case-01">01</a>, <a href="#case-06">06</a> and <a href="#case-07">07</a></p>
+          <p class="ax-cases">Cases <a href="#case-01">01</a>, <a href="#case-06">06</a>, <a href="#case-07">07</a> and <a href="#case-09">09</a></p>
         </div>
       </div>
     </div>
@@ -471,7 +472,7 @@
     <div class="wrap">
       <span class="kicker">Delivered value · 2026</span>
       <h2 class="display">Prototypes, products, <em>prompt and context engineering</em></h2>
-      <p class="lede">Prompt, agent and skill architecture applied to customer service, in eight <strong>cases</strong>: from prompt re-engineering to enablement.</p>
+      <p class="lede">Prompt, agent and skill architecture applied to customer service, in nine <strong>cases</strong>: from prompt re-engineering to enablement.</p>
 
       <div class="cases">
 
@@ -494,7 +495,7 @@
         <article class="case reveal" id="case-02">
           <div class="case-kicker"><span class="idx">02 —</span> Enablement &amp; facilitation</div>
           <h3>AI enablement: from local experience to organizational capability</h3>
-          <span class="badge">12 workshops and sessions in 2025–2026 · 6 reusable assets</span>
+          <span class="badge">12 workshops and sessions in 2025–2026 · 50+ agents published</span>
           <dl>
             <dt>Before</dt>
             <dd>Squads learned AI in isolation: prompt and agent questions resolved in one-off meetings, with no recurring support structure and no assets the team could reuse.</dd>
@@ -503,7 +504,7 @@
             <dt>Examples</dt>
             <dd><em>Scaling productivity without scaling risk</em> (talk)<br><em>Evaluating AI agents (evals)</em> (training)<br><em>AI Canvas: customer service copilot</em> (workshop)<br><em>Knowledge bases for AI in banking service</em> (workshop)<br><em>AI agents for everyday productivity</em> (session)</dd>
             <dt class="result">Result</dt>
-            <dd class="result">The model starts from local experience and evolves into <strong>organizational capability</strong>: recurring community of practice, centralized library of prompts, skills, diagnostics and best practices, AI evaluation framework (stability, divergence and quality) and training of multipliers across squads.</dd>
+            <dd class="result">The model starts from local experience and evolves into <strong>organizational capability</strong>: recurring community of practice, centralized library of prompts, skills, diagnostics and best practices, AI evaluation framework (stability, divergence and quality) and training of multipliers across squads. In Copilot 365 alone, <strong>50+ agents</strong> are published across six families: prompt and agent engineering, AI quality and curation, team research (evals, context engineering, experimental statistics), service blueprints and journeys, productivity and leadership, and content.</dd>
           </dl>
           <div class="spacer"></div>
           <div class="tags"><span class="chip ax">AX · people with agents</span><span class="chip">Training</span><span class="chip">Facilitation</span><span class="chip">SOP taxonomy</span><span class="chip">Assets</span><span class="chip">Champions</span></div>
@@ -605,6 +606,22 @@
           </dl>
           <div class="spacer"></div>
           <div class="tags"><span class="chip ax">AX · people with agents</span><span class="chip ax">AX · evaluation</span><span class="chip">Credit cards</span><span class="chip">Chat + voice</span><span class="chip">Guardrails</span><span class="chip">Blind review</span></div>
+        </article>
+
+        <article class="case reveal" id="case-09">
+          <div class="case-kicker"><span class="idx">09 —</span> Agent harness</div>
+          <h3>A knowledge base review harness: the LLM writes, the code audits</h3>
+          <span class="badge">Working prototype in 2 days · 31 → 5 discrepancies in 1 round</span>
+          <dl>
+            <dt>Before</dt>
+            <dd>Reviewing and merging knowledge bases with a single megaprompt left everything to the model: writing, validating and saying whether the output was ready. On large bases, responses hit the output limit and whole sections were lost.</dd>
+            <dt>Delivery</dt>
+            <dd>A <strong>harness</strong> around the model, built with Devin and connected to the bank&rsquo;s internal LLM platform. The <strong>LLM plans and writes</strong> each subsection in parallel; <strong>code prepares, assembles and audits</strong>, offline. Only the passages with discrepancies go back to the model, and a fix that makes the audit worse is rolled back. A passing audit is not an approval: the curator decides what gets published.</dd>
+            <dt class="result">Result</dt>
+            <dd class="result">In a case merging two bases, discrepancies dropped from <strong>31 to 5</strong> after one targeted fix round (in a replay on the final version; the full run, on the first version of the fix, ended at 12), which also cut uncached input from <strong>215k to 67k tokens</strong> and output from 71k to 11k. The same case ran on three models (GPT-4.1, GPT-5.2 and Claude Sonnet 5): the most complete was about 8× slower, and the default landed in the middle.</dd>
+          </dl>
+          <div class="spacer"></div>
+          <div class="tags"><span class="chip ax">AX · agent as user</span><span class="chip ax">AX · evaluation</span><span class="chip">Harness</span><span class="chip">Deterministic code</span><span class="chip">Human in the loop</span><span class="chip">Prototype</span></div>
         </article>
 
       </div>
